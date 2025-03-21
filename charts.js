@@ -101,7 +101,10 @@ function initProductionChart() {
 
     // Filtro por ano
     const productionDataByYear = {
-        'all': productionData,
+        'all': {
+            labels: productionData.labels,
+            datasets: productionData.datasets
+        },
         '2023': {
             labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
             datasets: [
@@ -225,7 +228,7 @@ function initProductionChart() {
     // Configurações do gráfico
     const config = {
         type: 'line',
-        data: productionData,
+        data: productionDataByYear['all'],
         options: {
             responsive: true,
             maintainAspectRatio: false,
@@ -369,6 +372,12 @@ function initDistributionChart() {
 function initChartFilters() {
     // Filtros para o gráfico de produção
     const filterButtons = document.querySelectorAll('.chart-filter-btn');
+    
+    // Ensure the 'all' button is active by default
+    const allYearsButton = document.querySelector('.chart-filter-btn[data-year="all"]');
+    if (allYearsButton) {
+        allYearsButton.classList.add('active');
+    }
     
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {

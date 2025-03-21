@@ -275,7 +275,13 @@
     }
     
     .contact-banner {
-        padding: 25px 0;
+        padding: 25px 0 45px;
+        overflow: visible;
+    }
+    
+    .banner-lights {
+        bottom: -20px;
+        height: 40px;
     }
     
     .contact-banner h2 {
@@ -284,6 +290,12 @@
     
     .contact-banner p {
         font-size: 0.9rem;
+    }
+    
+    .contact-card-info p {
+        font-size: 0.9rem;
+        word-break: break-word;
+        padding: 0 5px;
     }
     
     .contact-cards {
@@ -358,7 +370,8 @@
     }
     
     .contact-banner {
-        padding: 20px 0;
+        padding: 20px 0 45px;
+        overflow: visible;
     }
     
     .contact-banner h2 {
@@ -408,8 +421,14 @@
     
     .contact-card {
         width: 280px;
-        height: 200px;
+        height: auto;
+        min-height: 200px;
         padding: 20px;
+    }
+    
+    .contact-card-info p {
+        font-size: 0.85rem;
+        word-break: break-word;
     }
 }
 
